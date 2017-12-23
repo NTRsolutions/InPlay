@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">INDIVIDUAL</string>
+    <string name="albums">" ÁLBUMES"</string>
+    <string name="artists">ARTISTAS</string>
+    <string name="playlists">PLAYLIST</string>
+    <string name="permission_preferences">PREFERENCIAS DE PERMISO</string>
+    <string name="permission_read_storage">PERMISO LEER ALMACENAMIENTO</string>
+    <string name="permission_write_storage">PERMISO ESCRIBIR ALMACENAMIENTO</string>
+    <string name="permission_phone_state">PERMISO TELEFONO ESTADO</string>
+    <string name="create_new_playlist">Crear nueva lista de reproducción</string>
+    <string name="enter_playlist_name">Entonces, ¿qué vas a nombrar?</string>
+    <string name="hint_playlist_name">Nombre de la lista de reproducción</string>
+    <string name="right_swipe_to_add">Deslizar hacia la derecha para agregar</string>
+    <string name="create">Crear</string>
+    <string name="finish">Terminar</string>
+    <string name="no_of_tracks">Pistas totales</string>
+    <string name="share">Compartir</string>
+    <string name="add_to_playlist">Agregar a la lista de reproducción</string>
+    <string name="set_ringtone">Establecer como tono de llamada</string>
+    <string name="rate_app">Califica esta aplicación</string>
+    <string name="set_ringtone_msg">La pista estaba mojada como Tono de llamada</string>
+    <string name="track_added">Seguimiento añadido a</string>
+</resources>

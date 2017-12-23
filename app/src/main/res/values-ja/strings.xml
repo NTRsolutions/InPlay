@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">シングルス</string>
+    <string name="albums">アルバム</string>
+    <string name="artists">アーティスト</string>
+    <string name="playlists">プレイリスト</string>
+    <string name="create_new_playlist">新しいプレイリストを作成する</string>
+    <string name="enter_playlist_name">だから、あなたは何と名づけますか？</string>
+    <string name="hint_playlist_name">プレイリスト名</string>
+    <string name="right_swipe_to_add">追加する権利をスワイプする</string>
+    <string name="create">作成する</string>
+    <string name="finish">フィニッシュ</string>
+    <string name="no_of_tracks">トータルトラック</string>
+    <string name="share">シェア</string>
+    <string name="add_to_playlist">プレイリストに追加する</string>
+    <string name="set_ringtone">着メロとして設定</string>
+    <string name="rate_app">このアプリを評価する</string>
+    <string name="set_ringtone_msg">トラックは着メロとして濡れていた</string>
+    <string name="track_added">追加されたトラック</string>
+    <string name="permission_preferences">許可嗜好</string>
+    <string name="permission_read_storage">許可書の読み込み</string>
+    <string name="permission_write_storage">許可記憶書込み</string>
+    <string name="permission_phone_state">許可電話状態</string>
+</resources>

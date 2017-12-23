@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">एकल</string>
+    <string name="albums">एलबम</string>
+    <string name="artists">कलाकार</string>
+    <string name="playlists">प्लेलिस्ट</string>
+    <string name="permission_preferences">अनुमति प्राधानियां</string>
+    <string name="permission_read_storage">अनुमति पढ़ें भंडारण</string>
+    <string name="permission_write_storage">अनुमति लिखिए भंडारण</string>
+    <string name="permission_phone_state">अनुमति फोन स्थिति</string>
+    <string name="create_new_playlist">नई प्लेलिस्ट बनाएं</string>
+    <string name="enter_playlist_name">तो आप इसका नाम क्या रखे</string>
+    <string name="hint_playlist_name">प्लेलिस्ट का नाम</string>
+    <string name="right_swipe_to_add">दाईं ओर स्वाइप करें</string>
+    <string name="create">बनाये</string>
+    <string name="finish">समाप्त</string>
+    <string name="no_of_tracks">कुल ट्रैक</string>
+    <string name="share">शेयर</string>
+    <string name="add_to_playlist">प्लेलिस्ट में जोड़ें</string>
+    <string name="set_ringtone">रिंगटोन के रूप में नियत करें</string>
+    <string name="rate_app">इस ऐप्लिकेशन को रेट करे</string>
+    <string name="set_ringtone_msg">ट्रैक रिंगटोन के रूप में सेट किया गया</string>
+    <string name="track_added">ट्रैक में जोड़ा गया</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">الفردي</string>
+    <string name="albums">ألبومات</string>
+    <string name="artists">فنان</string>
+    <string name="playlists">قائمة التشغيل</string>
+    <string name="create_new_playlist">إنشاء قائمة تشغيل جديدة</string>
+    <string name="enter_playlist_name">فماذا ستعمل اسمه؟</string>
+    <string name="hint_playlist_name">اسم قائمة التشغيل</string>
+    <string name="right_swipe_to_add">مرر سريعا لليمين لإضافة</string>
+    <string name="create">خلق</string>
+    <string name="finish">إنهاء</string>
+    <string name="no_of_tracks">إجمالي المسارات</string>
+    <string name="share">شارك</string>
+    <string name="add_to_playlist">أضف إلى قائمة التشغيل</string>
+    <string name="set_ringtone">تعيين كنغمة رنين</string>
+    <string name="rate_app">قيم هذا التطبيق</string>
+    <string name="set_ringtone_msg">كان المسار الرطب كنغمة رنين</string>
+    <string name="track_added">تمت إضافة المسار إلى</string>
+    <string name="permission_preferences">بيرميسيون بريفيرنسز</string>
+    <string name="permission_read_storage">إذن قراءة التخزين</string>
+    <string name="permission_write_storage">بيرميسيون كتابة التخزين</string>
+    <string name="permission_phone_state">بيرميسيون حالة الهاتف</string>
+</resources>

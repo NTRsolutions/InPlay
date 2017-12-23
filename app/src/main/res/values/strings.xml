@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name" translatable="false">Play</string>
+    <string name="songs">SINGLES</string>
+    <string name="albums">ALBUMS</string>
+    <string name="artists">ARTISTS</string>
+    <string name="playlists">PLAYLIST</string>
+
+    <string name="permission_preferences">PERMISSION PREFERENCES</string>
+    <string name="permission_read_storage">PERMISSION READ STORAGE</string>
+    <string name="permission_write_storage">PERMISSION WRITE STORAGE</string>
+    <string name="permission_phone_state">PERMISSION PHONE STATE</string>
+
+    <!--Strings From Playlist-->
+    <string name="create_new_playlist">Create New Playlist</string>
+    <string name="enter_playlist_name">So what are you gonna name it ?</string>
+    <string name="hint_playlist_name">Playlist Name</string>
+    <string name="right_swipe_to_add">Swipe Right To Add</string>
+    <string name="create">Create</string>
+    <string name="finish">Finish</string>
+    <string name="no_of_tracks">Total Tracks</string>
+
+    <!--String from options-->
+    <string name="share">Share</string>
+    <string name="add_to_playlist">Add To Playlist</string>
+    <string name="set_ringtone">Set As Ringtone</string>
+    <string name="rate_app">Rate This App</string>
+
+    <string name="set_ringtone_msg">Track was wet as Ringtone</string>
+    <string name="track_added">Track added to</string>
+
+</resources>

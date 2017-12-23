@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">SIMPLE</string>
+    <string name="albums">ALBUMS</string>
+    <string name="artists">ARTISTE</string>
+    <string name="playlists">PLAYLIST</string>
+    <string name="create_new_playlist">Créer une nouvelle playlist</string>
+    <string name="enter_playlist_name">Alors qu\'est-ce que tu vas le nommer?</string>
+    <string name="hint_playlist_name">Nom de la playlist</string>
+    <string name="right_swipe_to_add">Balayez vers la droite pour ajouter</string>
+    <string name="create">Créer</string>
+    <string name="finish">terminer</string>
+    <string name="no_of_tracks">Total Tracks</string>
+    <string name="share">Partager</string>
+    <string name="add_to_playlist">Ajouter à la playlist</string>
+    <string name="set_ringtone">Définir comme sonnerie</string>
+    <string name="rate_app">Évaluer l\'application</string>
+    <string name="set_ringtone_msg">La piste était humide en tant que Sonnerie</string>
+    <string name="track_added">Piste ajoutée à</string>
+    <string name="permission_preferences">PRÉFÉRENCES D\'AUTORISATION</string>
+    <string name="permission_read_storage">PERMISSION DE STOCKAGE D\'ÉCRITURE</string>
+    <string name="permission_write_storage">PERMISSION WRITE STORAGE</string>
+    <string name="permission_phone_state">ÉTAT DU TÉLÉPHONE D\'AUTORISATION</string>
+</resources>

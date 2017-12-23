@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">SINGLES</string>
+    <string name="albums">ALBUMES</string>
+    <string name="artists">ARTISTAS</string>
+    <string name="playlists">LISTA DE REPRODUÇÃO</string>
+    <string name="permission_preferences">PREFERÊNCIAS DE PERMISSÃO</string>
+    <string name="permission_read_storage">PERMISSÃO LEIA ARMAZENAMENTO</string>
+    <string name="permission_write_storage">PERMISSÃO ESCRITA ARMAZENAMENTO</string>
+    <string name="permission_phone_state">ESTADO DE TELEFONE DE PERMISSÃO</string>
+    <string name="create_new_playlist">Criar nova lista de reprodução</string>
+    <string name="enter_playlist_name">Então, o que você vai chamar?</string>
+    <string name="hint_playlist_name">Nome da lista de reprodução</string>
+    <string name="right_swipe_to_add">Deslize para a direita para adicionar</string>
+    <string name="create">Crio</string>
+    <string name="finish">Terminar</string>
+    <string name="no_of_tracks">Total de faixas</string>
+    <string name="share">Compartilhar</string>
+    <string name="add_to_playlist">Adicionar à Playlist</string>
+    <string name="set_ringtone">Definir como Ringtone</string>
+    <string name="rate_app">Avalie este aplicativo</string>
+    <string name="set_ringtone_msg">A faixa estava molhada como Ringtone</string>
+    <string name="track_added">Seguir adicionado a</string>
+</resources>

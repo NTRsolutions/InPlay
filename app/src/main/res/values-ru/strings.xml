@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InPlay</string>
+    <string name="songs">ОДИНОЧНЫЕ</string>
+    <string name="albums">АЛЬБОМЫ</string>
+    <string name="artists">ХУДОЖНИКИ</string>
+    <string name="playlists">PLAYLIST</string>
+    <string name="permission_preferences">ПРЕДПОЧТЕНИЯ ПО РАЗРЕШЕНИЮ</string>
+    <string name="permission_read_storage">РАЗРЕШЕНИЕ ПРОЧИТАЙТЕ ХРАНЕНИЕ</string>
+    <string name="permission_write_storage">ПРАВИЛЬНОЕ ХРАНЕНИЕ</string>
+    <string name="permission_phone_state">СОСТОЯНИЕ ТЕЛЕФОНА РАЗРЕШЕНИЯ</string>
+    <string name="create_new_playlist">Создать новый плейлист</string>
+    <string name="enter_playlist_name">Так что ты назовешь им?</string>
+    <string name="hint_playlist_name">Имя плейлиста</string>
+    <string name="right_swipe_to_add">Проведите по экрану</string>
+    <string name="create">Создайте</string>
+    <string name="finish">Конец</string>
+    <string name="no_of_tracks">"Всего звуковая дорожка "</string>
+    <string name="share">Поделиться</string>
+    <string name="add_to_playlist">Добавить в плейлист</string>
+    <string name="set_ringtone">Установить в качестве рингтона</string>
+    <string name="rate_app">Оцени это приложение</string>
+    <string name="set_ringtone_msg">Трек был мокрым, как Ringtone</string>
+    <string name="track_added">Трек добавлен в</string>
+</resources>
