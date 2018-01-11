@@ -139,6 +139,7 @@ public class MediaRetriever{
 
         String[] arg = {"is_audioDB_created"};
         keysDB.update(keysEntry.TABLE_NAME,key_values,keysEntry.COLUMN_KEY + " = ?",arg);
+        keysDB.close();
     }
 
     public void insertArtist(String artists,String track_title,String data,String album,String album_id,int min,int sec){
@@ -165,6 +166,11 @@ public class MediaRetriever{
         values.put(artistEntry.COLUMN_DURATION_SEC,sec);
 
         long rw_id = db.insert(artistEntry.TABLE_NAME,null,values);
+        db.close();
+
+
+        MetadataAPI metadataAPI = new MetadataAPI(context);
+        metadataAPI.getArtistImage(artist);
     }
 
     public ArrayList<Audio> recreateQueue(){

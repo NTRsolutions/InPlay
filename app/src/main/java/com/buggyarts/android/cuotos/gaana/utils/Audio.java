@@ -9,7 +9,7 @@ import android.os.Parcelable;
 
 public class Audio implements Parcelable{
 
-    public String data, title, album, album_id, artist, key;
+    public String data, title, album, album_id, artist, key,artist_image;
     public int _id,min,sec, year;
 
     //Requested to assign information to a track
@@ -50,8 +50,9 @@ public class Audio implements Parcelable{
         this.album_id = album_id;
     }
 
-    public Audio(String artist){
+    public Audio(String artist,String artist_image){
         this.artist = artist;
+        this.artist_image = artist_image;
     }
 
     //load track list from album

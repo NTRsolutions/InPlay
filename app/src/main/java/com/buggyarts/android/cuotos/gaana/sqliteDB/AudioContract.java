@@ -51,6 +51,7 @@ public final class AudioContract {
         public static String TABLE_NAME = "artistData";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_DATA = "data";
+        public static final String COLUMN_IMAGE = "artist_image";
         public static final String COLUMN_ARTIST = "artist_name";
         public static final String COLUMN_ALBUM = "artist_albums";
         public static final String COLUMN_AlBUM_ID = "album_id";

@@ -36,6 +36,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         DisplayMetrics dm = new DisplayMetrics();
@@ -163,11 +166,11 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
         if(requestCode == Constants.REQUEST_READ_EXTERNAL_STORAGE){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
-                otherPermissions();
+//                otherPermissions();
                 initViews();
             } else {
 
-                otherPermissions();
+//                otherPermissions();
 
                 Toast.makeText(this,"Please allow Storage permissions in your app Settings",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
@@ -184,13 +187,13 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
         }
     }
 
-    private void otherPermissions(){
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE},
-                    Constants.REQUEST_PHONE_STATE);
-        }
-    }
+//    private void otherPermissions(){
+//        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+//                != PackageManager.PERMISSION_GRANTED){
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE},
+//                    Constants.REQUEST_PHONE_STATE);
+//        }
+//    }
 
     private void getPermissions(){
 
@@ -218,22 +221,22 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
             }
         }
 
-        if(checkPermission(Constants.TXT_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED){
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_PHONE_STATE)){
-                showPermissionExplanation(Constants.TXT_PHONE_STATE);
-            }else if(!permissionsUtil.checkPermissionsPreferences("phone state")){
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.READ_PHONE_STATE},Constants.REQUEST_PHONE_STATE);
-                permissionsUtil.updatePermissions("phone state");
-            }else {
-                Toast.makeText(this,"Please allow Storage permissions in your app Settings",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package",this.getPackageName(),null);
-                intent.setData(uri);
-                this.startActivity(intent);
-            }
-        }
+//        if(checkPermission(Constants.TXT_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED){
+//            if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_PHONE_STATE)){
+//                showPermissionExplanation(Constants.TXT_PHONE_STATE);
+//            }else if(!permissionsUtil.checkPermissionsPreferences("phone state")){
+//                ActivityCompat.requestPermissions(this,
+//                        new String[]{Manifest.permission.READ_PHONE_STATE},Constants.REQUEST_PHONE_STATE);
+//                permissionsUtil.updatePermissions("phone state");
+//            }else {
+//                Toast.makeText(this,"Please allow Storage permissions in your app Settings",Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent();
+//                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+//                Uri uri = Uri.fromParts("package",this.getPackageName(),null);
+//                intent.setData(uri);
+//                this.startActivity(intent);
+//            }
+//        }
     }
 
     public int checkPermission(int permission){
@@ -243,8 +246,8 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
                 return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
             case Constants.TXT_WRITE_EXTERNAL_STORAGE:
                 return ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            case Constants.TXT_PHONE_STATE:
-                return ContextCompat.checkSelfPermission(this,Manifest.permission.READ_PHONE_STATE);
+//            case Constants.TXT_PHONE_STATE:
+//                return ContextCompat.checkSelfPermission(this,Manifest.permission.READ_PHONE_STATE);
 
         }
         return -1;
@@ -261,10 +264,10 @@ public class MainActivity extends AppCompatActivity implements Songs_Fragment.Pl
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},Constants.REQUEST_WRITE_EXTERNAL_STORAGE);
                 break;
-            case Constants.TXT_PHONE_STATE:
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.READ_PHONE_STATE},Constants.REQUEST_PHONE_STATE);
-                break;
+//            case Constants.TXT_PHONE_STATE:
+//                ActivityCompat.requestPermissions(this,
+//                        new String[]{Manifest.permission.READ_PHONE_STATE},Constants.REQUEST_PHONE_STATE);
+//                break;
         }
     }
 

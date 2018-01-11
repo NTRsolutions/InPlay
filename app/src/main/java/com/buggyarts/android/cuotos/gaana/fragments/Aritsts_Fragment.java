@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +18,24 @@ import android.view.ViewGroup;
 import com.buggyarts.android.cuotos.gaana.ArtistActivity;
 import com.buggyarts.android.cuotos.gaana.R;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import com.buggyarts.android.cuotos.gaana.adapters.ArtistRecyclerViewAdapter;
 import com.buggyarts.android.cuotos.gaana.sqliteDB.ArtistDBManager;
 import com.buggyarts.android.cuotos.gaana.sqliteDB.AudioContract.artistEntry;
 import com.buggyarts.android.cuotos.gaana.utils.Audio;
+import com.buggyarts.android.cuotos.gaana.utils.MetadataAPI;
+import com.bumptech.glide.Glide;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by mayank on 11/15/17
@@ -37,6 +51,7 @@ public class Aritsts_Fragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
+
 
     @Nullable
     @Override
@@ -68,22 +83,24 @@ public class Aritsts_Fragment extends Fragment {
         public void OnItemClick(Audio audio) {
             Intent artistActivity = new Intent(context, ArtistActivity.class);
             artistActivity.putExtra("artist",audio.artist);
+            artistActivity.putExtra("artist_image",audio.artist_image);
             startActivity(artistActivity);
         }
     };
 
     public void loadArtist(){
         db = dbManager.getReadableDatabase();
-        String[] columns = {artistEntry.COLUMN_ARTIST};
+        String[] columns = {artistEntry.COLUMN_ARTIST,artistEntry.COLUMN_IMAGE};
 
         Cursor cursor = db.query(artistEntry.TABLE_NAME,columns,null,null, artistEntry.COLUMN_ARTIST,null,artistEntry.COLUMN_ARTIST);
         if(cursor != null && cursor.getCount()>0){
             while (cursor.moveToNext()){
                 String artist = cursor.getString(cursor.getColumnIndex(artistEntry.COLUMN_ARTIST));
-
-                artist_list.add(new Audio(artist));
+                String image_url = cursor.getString(cursor.getColumnIndex(artistEntry.COLUMN_IMAGE));
+                artist_list.add(new Audio(artist,image_url));
             }
         }cursor.close();
+
     }
 
     //    public void load_artist(){

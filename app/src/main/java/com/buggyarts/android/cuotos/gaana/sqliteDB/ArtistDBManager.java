@@ -19,6 +19,7 @@ public class ArtistDBManager extends SQLiteOpenHelper{
     private String SQL_CREATE_ENTRY = "CREATE TABLE " + artistEntry.TABLE_NAME + " ( "+
             artistEntry.COLUMN_ID + Constants.INT + Constants.NOT_NULL + Constants.KEY + Constants.COMMA_SEP +
             artistEntry.COLUMN_DATA + Constants.TEXT_TYPE + Constants.NOT_NULL + Constants.COMMA_SEP +
+            artistEntry.COLUMN_IMAGE + Constants.TEXT_TYPE + Constants.COMMA_SEP +
             artistEntry.COLUMN_ARTIST + Constants.TEXT_TYPE + Constants.NOT_NULL + Constants.COMMA_SEP +
             artistEntry.COLUMN_ALBUM + Constants.TEXT_TYPE + Constants.NOT_NULL + Constants.COMMA_SEP +
             artistEntry.COLUMN_AlBUM_ID + Constants.TEXT_TYPE + Constants.NOT_NULL + Constants.COMMA_SEP +

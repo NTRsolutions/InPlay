@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">InPlay</string>
     <string name="songs">싱글</string>
     <string name="albums">앨범</string>
     <string name="artists">예술가</string>

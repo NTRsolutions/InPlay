@@ -181,7 +181,7 @@ public class MusicPlayerService extends Service implements MediaPlayer.OnPrepare
         // Manage incoming phone calls during playback.
         // Pause MediaPlayer on incoming call,
         // Resume on hangup.
-        callStateListener();
+//        callStateListener();
 
         //ACTION_AUDIO_BECOMING_NOISY -- change in audio outputs -- BroadcastReceiver
         registerBecomingNoisyReceiver();
@@ -303,7 +303,7 @@ public class MusicPlayerService extends Service implements MediaPlayer.OnPrepare
             case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                 // Lost focus for a short time, but it's ok to keep playing
                 // at an attenuated level
-                if (mediaPlayer.isPlaying()) mediaPlayer.setVolume(0.1f, 0.1f);
+                if (mediaPlayer.isPlaying()) {mediaPlayer.setVolume(0.1f, 0.1f);}
                 break;
         }
     }
@@ -525,46 +525,46 @@ public class MusicPlayerService extends Service implements MediaPlayer.OnPrepare
      * Handle incoming phone calls here
      */
 
-    public void callStateListener(){
-        //Get telephone manager
-        telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-
-        phoneStateListener = new PhoneStateListener(){
-
-            @Override
-            public void onCallStateChanged(int state, String incomingNumber) {
-                super.onCallStateChanged(state, incomingNumber);
-
-                switch(state){
-
-                    //if at least one call exists or the phone is ringing
-                    //pause the MediaPlayer
-
-                    case TelephonyManager.CALL_STATE_OFFHOOK:
-                    case TelephonyManager.CALL_STATE_RINGING:
-                        if(mediaPlayer!=null){
-                            pauseMedia();
-                            ongoingCall = true;
-                        }
-                        break;
-                    case TelephonyManager.CALL_STATE_IDLE:
-                        if(mediaPlayer!=null){
-                            if(ongoingCall){
-                                ongoingCall = false;
-                                if(Constants.isTrackPlaying){
-                                    resumeMedia();
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-
-        // Register the listener with the telephony manager
-        // Listen for changes to the device call state.
-        telephonyManager.listen(phoneStateListener,PhoneStateListener.LISTEN_CALL_STATE);
-    }
+//    public void callStateListener(){
+//        //Get telephone manager
+//        telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+//
+//        phoneStateListener = new PhoneStateListener(){
+//
+//            @Override
+//            public void onCallStateChanged(int state, String incomingNumber) {
+//                super.onCallStateChanged(state, incomingNumber);
+//
+//                switch(state){
+//
+//                    //if at least one call exists or the phone is ringing
+//                    //pause the MediaPlayer
+//
+//                    case TelephonyManager.CALL_STATE_OFFHOOK:
+//                    case TelephonyManager.CALL_STATE_RINGING:
+//                        if(mediaPlayer!=null){
+//                            pauseMedia();
+//                            ongoingCall = true;
+//                        }
+//                        break;
+//                    case TelephonyManager.CALL_STATE_IDLE:
+//                        if(mediaPlayer!=null){
+//                            if(ongoingCall){
+//                                ongoingCall = false;
+//                                if(Constants.isTrackPlaying){
+//                                    resumeMedia();
+//                                }
+//                            }
+//                        }
+//                        break;
+//                }
+//            }
+//        };
+//
+//        // Register the listener with the telephony manager
+//        // Listen for changes to the device call state.
+//        telephonyManager.listen(phoneStateListener,PhoneStateListener.LISTEN_CALL_STATE);
+//    }
 
 
     /**

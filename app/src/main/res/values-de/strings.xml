@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">InPlay</string>
     <string name="track_added">Track hinzugefügt zu</string>
     <string name="songs">EINZEL</string>
     <string name="albums">ALBEN</string>

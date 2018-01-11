@@ -2,6 +2,7 @@ package com.buggyarts.android.cuotos.gaana;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
@@ -12,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,10 +50,10 @@ public class ArtistActivity extends AppCompatActivity {
 
     RelativeLayout open_player_view;
 
-    ImageView player_thumbnail, player_thumbnail_background, play_next,play_pause,play_previous;
+    ImageView player_thumbnail, player_thumbnail_background, play_next,play_pause,play_previous,background_cover;
     TextView player_title, player_artist;
 
-    String artist_name;
+    String artist_name,artist_image;
     private Audio nowPlayingTrack;
     private int nowPlayingIndex;
 
@@ -65,6 +68,7 @@ public class ArtistActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         artist_name = intent.getStringExtra("artist");
+        artist_image = intent.getStringExtra("artist_image");
 
         play_pause = (ImageView) findViewById(R.id.now_playing_play_pause);
         play_pause.setOnClickListener(play_pause_listener);
@@ -112,8 +116,10 @@ public class ArtistActivity extends AppCompatActivity {
      */
 
     private void appBarSetup(){
+        background_cover = (ImageView) findViewById(R.id.background_cover);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.artist_collapsing_ToolBar);
         collapsingToolbarLayout.setTitle(artist_name);
+        Glide.with(this).load(artist_image).asBitmap().into(background_cover);
         collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.viewBg));
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.viewBg));
 
@@ -127,6 +133,7 @@ public class ArtistActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.artist_tab_layout);
         tabLayout.setSelectedTabIndicatorHeight(0);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
     private void viewPagerFragmentsSetup(){

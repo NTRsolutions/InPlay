@@ -1,9 +1,11 @@
 package com.buggyarts.android.cuotos.gaana;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -71,6 +73,10 @@ public class CreateNewPlaylist extends AppCompatActivity implements PlaylistName
 
         new CreatePlaylist(this,playlist_name, tracks);
         finish();
+        Intent intent = new Intent("refresh playlist");
+        intent.putExtra("shouldRefresh",true);
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+        Log.d("Broadcaster","intent sent");
     }
 
     public void openSelectPlaylistTracksFragment(){

@@ -1,14 +1,18 @@
 package com.buggyarts.android.cuotos.gaana.fragments;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +87,14 @@ public class PlayList_Fragment extends Fragment{
         super.onCreate(savedInstanceState);
 
         context = getContext();
+        LocalBroadcastManager lbm = LocalBroadcastManager.getInstance(context);
+        lbm.registerReceiver(playlist_refresh_receiver,new IntentFilter("refresh playlist"));
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -91,12 +102,26 @@ public class PlayList_Fragment extends Fragment{
 //        MediaRetriever retriever = new MediaRetriever(context);
 //        retriever.storeQueueValues(queue,queueIndex);
         super.onDestroy();
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(playlist_refresh_receiver);
     }
 
     public View.OnClickListener add_new_playlist = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
             startActivity(new Intent(context,CreateNewPlaylist.class));
+        }
+    };
+
+    public BroadcastReceiver playlist_refresh_receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("Receiver","intent received");
+            if(intent!= null){
+                if(intent.getBooleanExtra("shouldRefresh",false)){
+                    adapter.notifyDataSetChanged();
+                }
+            }
         }
     };
 

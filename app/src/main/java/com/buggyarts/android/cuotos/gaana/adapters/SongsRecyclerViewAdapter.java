@@ -1,7 +1,13 @@
 package com.buggyarts.android.cuotos.gaana.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +16,32 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.buggyarts.android.cuotos.gaana.R;
+import com.buggyarts.android.cuotos.gaana.utils.MetadataAPI;
 import com.bumptech.glide.Glide;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import com.buggyarts.android.cuotos.gaana.utils.Audio;
 import com.buggyarts.android.cuotos.gaana.utils.MediaRetriever;
+import com.bumptech.glide.request.FutureTarget;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.BaseTarget;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.SizeReadyCallback;
+import com.bumptech.glide.request.target.ViewTarget;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -55,7 +81,7 @@ public class SongsRecyclerViewAdapter extends RecyclerView.Adapter<SongsRecycler
     }
 
     @Override
-    public void onBindViewHolder(SongsRecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final SongsRecyclerViewAdapter.MyViewHolder holder, int position) {
         final Audio audio = list.get(position);
         final int index = position;
         holder.title.setText(audio.title);
@@ -63,7 +89,9 @@ public class SongsRecyclerViewAdapter extends RecyclerView.Adapter<SongsRecycler
         String sec = String.format("%02d", audio.sec);
         String duration = audio.min + ":" + sec;
         holder.duration.setText(duration);
+
         Glide.with(context).load(MediaRetriever.getAlbumArt(audio.album_id)).asBitmap().into(holder.thumbnail);
+
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

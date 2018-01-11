@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import com.buggyarts.android.cuotos.gaana.sqliteDB.AudioContract.audioEntry;
 import com.buggyarts.android.cuotos.gaana.sqliteDB.AudioDBManager;
 import com.buggyarts.android.cuotos.gaana.utils.Audio;
+import com.buggyarts.android.cuotos.gaana.utils.MetadataAPI;
+import com.bumptech.glide.Glide;
 
 /**
  * Created by mayank on 11/16/17
@@ -50,12 +52,14 @@ public class ArtistRecyclerViewAdapter extends RecyclerView.Adapter<ArtistRecycl
     @Override
     public void onBindViewHolder(ArtistRecyclerViewAdapter.MyViewHolder holder, int position) {
         final Audio artist_card = artist_list.get(position);
-        holder.artist_name.setText(artist_card.artist);
+        String artist_name = artist_card.artist;
+        holder.artist_name.setText(artist_name);
+        Glide.with(context).load(artist_card.artist_image).asBitmap().into(holder.artist_thumbnail);
         holder.artist_thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.OnItemClick(artist_card);
-                Toast.makeText(context,"You just Clicked "+artist_card.artist,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context,"You just Clicked "+artist_card.artist,Toast.LENGTH_SHORT).show();
 
 //                artist_tracks = new ArrayList<Audio>();
 //                String[] arguments = {artist_card.artist};

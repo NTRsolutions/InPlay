@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">InPlay</string>
     <string name="songs">SIMPLE</string>
     <string name="albums">ALBUMS</string>
     <string name="artists">ARTISTE</string>
